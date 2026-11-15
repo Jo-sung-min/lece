@@ -1,6 +1,6 @@
 # LUCE
 
-FATELL, BUCHU, HWA:RYEOK, SOROW를 소개하는 LUCE의 사업 포트폴리오입니다. 짧은 소개와 각 서비스의 실제 화면, 한 문장 설명, 사이트 링크로 구성했습니다.
+FATELL, BUCHU, HWA:RYEOK, SOROW를 소개하는 LUCE의 사업 포트폴리오입니다. 서비스별로 하나의 장면이 펼쳐지고 실제 화면 캡처가 스크롤에 맞춰 움직이는 구성입니다. 하단에는 공식 사업자 정보와 연락처를 표시합니다.
 
 Next.js App Router, React, TypeScript, CSS로 제작했습니다. 페이지는 빌드 시 정적 파일로 생성되며 별도 서버, 데이터베이스, API 키, 환경 변수 없이 배포할 수 있습니다.
 
@@ -45,12 +45,19 @@ npm run build
 | 브랜드 이름, 설명, 사이트 링크    | `src/lib/brands.ts`                  |
 | 각 사이트의 실제 캡처 이미지     | `public/sites/`                     |
 | 첫 화면, 사업 소개, 섹션 구성     | `src/components/company-landing.tsx` |
+| 스크롤에 따른 화면 움직임         | `src/components/scroll-experience.tsx` |
+| 사업자 정보와 공식 연락처         | `src/lib/business.ts`                |
+| 사업자 정보 푸터                  | `src/components/business-footer.tsx` |
 | 색상, 글꼴, 반응형 레이아웃, 모션 | `src/app/globals.css`                |
 | 검색 결과·공유 제목 및 설명       | `src/app/layout.tsx`                 |
 | 브라우저 탭 아이콘                | `public/favicon.svg`                 |
 | 정적 내보내기 설정                | `next.config.ts`                     |
 
 운영 도메인이 정해지면 `src/app/layout.tsx`의 메타데이터에 해당 도메인 기준의 canonical URL 및 공유 이미지를 추가할 수 있습니다. 현재는 임의의 LUCE 도메인을 지정하지 않았습니다.
+
+스크롤 연출은 별도 애니메이션 라이브러리 없이 CSS sticky와 브라우저의 requestAnimationFrame을 사용합니다. 모바일과 낮은 높이의 화면에서는 자연스러운 세로 배치로 전환하며, 기기의 동작 줄이기 설정을 존중합니다. JavaScript 없이도 소개와 링크, 사업자 정보를 볼 수 있습니다.
+
+사업자 정보는 2026-11-15 FATELL 공식 푸터 및 제공된 사업자등록증과 대조했습니다. 사업자등록증 이미지나 생년월일은 웹사이트에 포함하지 않습니다.
 
 ## 연결된 브랜드
 
