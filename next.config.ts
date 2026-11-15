@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // This company page has no API routes, server actions, or runtime server work.
+  // Build the entire portfolio as static files; no runtime server is required.
   output: "export",
 };
 
