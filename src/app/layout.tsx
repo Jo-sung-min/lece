@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title,
   description,
   applicationName: "LUCE",
+  verification: {
+    google: "aqPWBLDKsCGM7qX9jdQ5lVQtqRD0SJD9jpzfygM03Kk",
+  },
   keywords: [
     "LUCE",
     "루체",
